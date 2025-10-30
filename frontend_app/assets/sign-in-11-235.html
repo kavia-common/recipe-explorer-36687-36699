@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Fixed 375 viewport for pixel-perfect canvas while centering on larger screens -->
+  <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sign In (11:235)</title>
+  <link rel="stylesheet" href="./sign-in-11-235.css" />
+</head>
+<body>
+  <!-- Screen frame: 375x812 -->
+  <div id="screen-11-235" class="screen" role="region" aria-label="Sign In screen">
+    <!-- Status Bar -->
+    <header class="status-bar" aria-label="Status bar">
+      <div class="status-time" aria-label="Current time">19:27</div>
+      <div class="status-icons" aria-hidden="true">
+        <!-- Use available assets from assets/figmaimages -->
+        <div class="icon wifi">
+          <img src="./figmaimages/figma_image_30_750.png" alt="" />
+        </div>
+        <div class="icon battery">
+          <img class="battery-body" src="./figmaimages/figma_image_30_781.png" alt="" />
+          <img class="battery-fill" src="./figmaimages/figma_image_30_811.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <main class="content" role="main">
+      <!-- Title group -->
+      <section class="title-group" aria-label="Welcome title">
+        <h1 class="title-hello">Hello,</h1>
+        <p class="title-sub">Welcome Back!</p>
+      </section>
+
+      <!-- Email field -->
+      <section class="input-field email-field">
+        <label class="label" for="email">Email</label>
+        <div class="input-rect">
+          <input id="email" name="email" type="email" placeholder="Enter Email" autocomplete="username" inputmode="email" aria-required="true" />
+        </div>
+      </section>
+
+      <!-- Password field -->
+      <section class="input-field password-field">
+        <label class="label" for="password">Enter Password</label>
+        <div class="input-rect">
+          <input id="password" name="password" type="password" placeholder="Enter Password" autocomplete="current-password" aria-required="true" />
+          <button type="button" id="toggle-password" class="toggle-password" aria-label="Show password" aria-pressed="false" title="Show password">
+            <img src="./figmaimages/figma_image_36_832.png" alt="" />
+          </button>
+        </div>
+      </section>
+
+      <!-- Forgot password -->
+      <div class="forgot-password">
+        <a href="#" id="forgot-link" aria-label="Forgot Password link">Forgot Password?</a>
+      </div>
+
+      <!-- Primary Sign In button -->
+      <button class="btn-primary" id="sign-in-button" type="button" disabled aria-disabled="true">
+        <span class="btn-label">Sign In</span>
+        <img class="btn-icon" src="./figmaimages/figma_image_22_256.png" alt="" />
+      </button>
+
+      <!-- Divider: Or Sign in With -->
+      <div class="divider" role="separator" aria-label="Or sign in with">
+        <span class="divider-line left" aria-hidden="true"></span>
+        <span class="divider-text">Or Sign in With</span>
+        <span class="divider-line right" aria-hidden="true"></span>
+      </div>
+
+      <!-- Social buttons -->
+      <div class="social-row" role="group" aria-label="Social sign-in">
+        <!-- Google -->
+        <button class="social-btn" type="button" aria-label="Sign in with Google" id="google-btn">
+          <img class="social-bg" src="./figmaimages/figma_image_253_1695.png" alt="" />
+          <img class="social-icon" src="./figmaimages/figma_image_253_1698.png" alt="Google logo" />
+        </button>
+        <!-- Facebook -->
+        <button class="social-btn" type="button" aria-label="Sign in with Facebook" id="facebook-btn">
+          <img class="social-bg" src="./figmaimages/figma_image_253_1695.png" alt="" />
+          <img class="social-icon" src="./figmaimages/figma_image_253_1701.png" alt="Facebook logo" />
+        </button>
+      </div>
+
+      <!-- Sign up prompt -->
+      <p class="signup-text">
+        Don’t have an account? <a href="#" id="signup-link" aria-label="Sign up link">Sign up</a>
+      </p>
+    </main>
+
+    <!-- Home Indicator -->
+    <div class="home-indicator" aria-hidden="true">
+      <img src="./figmaimages/figma_image_20_574.png" alt="" />
+    </div>
+  </div>
+
+  <script src="./sign-in-11-235.js"></script>
+</body>
+</html>

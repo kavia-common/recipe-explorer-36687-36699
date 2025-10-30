@@ -1,0 +1,336 @@
+:root {
+  /* Canvas and Ocean Professional hues (used subtly; preserve pixel specs) */
+  --bg-canvas: #ffffff;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9aa0a6;
+  --link: #f59e0b; /* Ocean Professional secondary */
+  --signup-accent: #f59e0b;
+
+  /* Controls */
+  --input-border: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-radius: 12px;
+
+  --btn-primary-bg: #2563eb; /* Ocean Professional primary */
+  --btn-primary-text: #ffffff;
+  --btn-radius: 14px;
+
+  /* Divider */
+  --divider: #e5e7eb;
+
+  /* Typography */
+  --font-family: "Helvetica Neue", Arial, sans-serif;
+  --h1-size: 32px;
+  --sub-size: 16px;
+  --label-size: 14px;
+  --input-size: 16px;
+  --button-size: 20px;
+  --meta-size: 14px;
+
+  /* Layout */
+  --screen-w: 375px;
+  --screen-h: 812px;
+
+  /* Effects */
+  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  --soft-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #f9fafb; /* Ocean Professional background */
+}
+body {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 24px 0;
+  color: var(--text-primary);
+  font-family: var(--font-family);
+}
+
+.screen {
+  position: relative;
+  width: var(--screen-w);
+  height: var(--screen-h);
+  background: var(--bg-canvas);
+  overflow: hidden;
+  border-radius: 38px;
+  box-shadow: var(--soft-shadow);
+}
+
+/* Status bar (44px height at top) */
+.status-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 375px;
+  height: 44px;
+}
+.status-time {
+  position: absolute;
+  left: 30px;
+  top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.status-icons {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.status-icons .icon img { display: inline-block; }
+.status-icons .battery {
+  position: relative;
+  width: 25px;
+  height: 12px;
+}
+.status-icons .battery .battery-body {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 12px;
+}
+.status-icons .battery .battery-fill {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  width: 100%;
+  height: calc(100% - 78px);
+}
+
+/* Title group */
+.title-group {
+  position: absolute;
+  left: 30px;
+  top: 94px;
+  width: 315px;
+}
+.title-hello {
+  margin: 0;
+  font-size: var(--h1-size);
+  line-height: 45px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.title-sub {
+  margin: 6px 0 0 0;
+  font-size: var(--sub-size);
+  line-height: 30px;
+  color: var(--text-secondary);
+}
+
+/* Input fields */
+.input-field {
+  position: absolute;
+  left: 30px;
+  width: 315px;
+  height: 81px;
+}
+.email-field { top: 226px; }
+.password-field { top: 337px; }
+
+.input-field .label {
+  display: block;
+  font-size: var(--label-size);
+  line-height: 21px;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+.input-field .input-rect {
+  width: 315px;
+  height: 55px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.input-field .input-rect:focus-within {
+  box-shadow: var(--focus-ring);
+  border-color: #93c5fd;
+}
+.input-field input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: var(--input-size);
+  color: var(--text-primary);
+}
+.input-field input::placeholder { color: var(--text-muted); }
+
+/* Toggle password button inside input */
+.toggle-password {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0.8;
+}
+.toggle-password:hover { opacity: 1; }
+
+/* Forgot Password */
+.forgot-password {
+  position: absolute;
+  left: 40px;
+  top: 522px;
+}
+.forgot-password a {
+  font-size: 14px;
+  color: var(--link);
+  text-decoration: none;
+}
+.forgot-password a:hover { text-decoration: underline; }
+
+/* Primary Button */
+.btn-primary {
+  position: absolute;
+  left: 30px;
+  top: 480px;
+  width: 315px;
+  height: 60px;
+  border: 0;
+  border-radius: var(--btn-radius);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform .1s ease, opacity .2s ease;
+}
+.btn-primary[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-primary:active { transform: translateY(1px); }
+.btn-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Divider */
+.divider {
+  position: absolute;
+  left: 90px;
+  top: 560px;
+  width: 195px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+.divider-text { font-size: 14px; }
+.divider-line {
+  flex: 0 0 50px;
+  height: 1px;
+  background: var(--divider);
+}
+.divider .left { margin-right: 10px; }
+.divider .right { margin-left: 10px; }
+
+/* Social buttons */
+.social-row {
+  position: absolute;
+  left: calc(50% - 66px);
+  top: 597px;
+  width: 132px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+.social-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.social-btn .social-bg {
+  position: absolute;
+  left: 0; top: 0;
+  width: 44px;
+  height: 44px;
+}
+.social-btn .social-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Signup text */
+.signup-text {
+  position: absolute;
+  left: 99px;
+  top: 696px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.signup-text a {
+  color: var(--signup-accent);
+  text-decoration: none;
+}
+.signup-text a:hover { text-decoration: underline; }
+
+/* Home indicator */
+.home-indicator {
+  position: absolute;
+  left: 120px;
+  bottom: 9px;
+  width: 135px;
+  height: 5px;
+  opacity: 0.9;
+}
+.home-indicator img {
+  width: 135px;
+  height: 5px;
+  display: block;
+}
+
+/* Accessibility focus */
+a:focus, button:focus, input:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 8px;
+}
+
+/* Center screen on larger viewports */
+@media (min-width: 376px) {
+  body { align-items: center; }
+}
